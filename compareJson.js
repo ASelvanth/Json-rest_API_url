@@ -19,8 +19,30 @@
 // }
 
 
+// var
+// aJSON = { "name" : "Person1", "age"   : 5,},
+// bJSON = {"age"   : 5,"name" : "Person1"};
+    
+//  JSON.stringify(aJSON) === JSON.stringify(bJSON);
+
 var
 aJSON = { "name" : "Person1", "age"   : 5,},
 bJSON = {"age"   : 5,"name" : "Person1"};
-    
- JSON.stringify(aJSON) === JSON.stringify(bJSON);
+
+var info =true;
+
+if(Object.keys(aJSON).length==Object.keys(bJSON).length){
+    for(key in aJSON) { 
+        if(aJSON[key] == bJSON[key]) {
+            continue;
+        }
+        else {
+            info=false;
+            break;
+        }
+    }
+}
+else {
+   info=false;
+}
+console.log("The given object are equal"+" "+ info);
